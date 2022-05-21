@@ -48,7 +48,8 @@ def run_checks():
             mod = importlib.import_module(pkg)
             if req_version:
                 version = mod.__version__
-                if Version(version) != req_version:
+                # if Version(version) != req_version:
+                if version != req_version:
                     print(FAIL, '%s version %s is required, but %s installed.' % (pkg, req_version, version))
                     continue
             print(OK, '%s' % pkg)
@@ -57,3 +58,4 @@ def run_checks():
 
 if __name__ == '__main__':
     run_checks()
+    # Comment to test GitHub
